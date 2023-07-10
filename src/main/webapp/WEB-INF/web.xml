@@ -1,0 +1,73 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>StudentService</servlet-name>
+  	<servlet-class>com.controller.StudentService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>validstulogin</servlet-name>
+  	<servlet-class>com.controller.validstulogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>StudentServletSignup</servlet-name>
+  	<servlet-class>com.controller.StudentServletSignup</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecruiterService</servlet-name>
+  	<display-name>RecruiterService</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.RecruiterService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecruiterServletSignup</servlet-name>
+  	<display-name>RecruiterServletSignup</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.RecruiterServletSignup</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>validreclogin</servlet-name>
+  	<display-name>validreclogin</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.validreclogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>StudentHome</servlet-name>
+  	<servlet-class>com.controller.StudentHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>StudentService</servlet-name>
+  	<url-pattern>/studentlogin/StudentService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>validstulogin</servlet-name>
+  	<url-pattern>/validstulogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentServletSignup</servlet-name>
+  	<url-pattern>/studentlogin/StudentServletSignup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecruiterService</servlet-name>
+  	<url-pattern>/recruiterlogin/RecruiterService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecruiterServletSignup</servlet-name>
+  	<url-pattern>/recruiterlogin/RecruiterServletSignup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>validreclogin</servlet-name>
+  	<url-pattern>/validreclogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentHome</servlet-name>
+  	<url-pattern>/studentlogin/StudentHome</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+

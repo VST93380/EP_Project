@@ -1,0 +1,101 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+  }
+  
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+ 
+ 
+ .banner {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+ }
+ 
+ .banner h1 {
+    font-size: 80px;
+    color: #ddd;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: moveToLeft 2s;
+ }
+ 
+ .banner span {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+ }
+ 
+ .banner p {
+    font-size: 50px;
+    font-weight: 300;
+    color: #eee;
+    margin-bottom: 20px;
+    animation: moveToRight 2s;
+ }
+ 
+ .banner button {
+    width: 180px;
+    padding: 12px;
+    margin: 20px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+ }
+ 
+ .btn-left {
+    background-color: #eee;
+    color: #444;
+    animation: animateBtn 1s 1.5s backwards;
+ }
+ 
+ .btn-right {
+    background-color: transparent;
+    color: #eee;
+    animation: animateBtn 1s 2.3s backwards;
+ }
+ 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>
+    
+  </title>
+  <link rel="stylesheet" href="./style.css">
+<style>
+.button1 {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ff69b4;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: box-shadow 0.3s;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.button1:before, .button1:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #00ff00, #ffff00, #00ff00, #ffff00);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button1:before {
+  filter: blur(5px);
+}
+
+.button1:after {
+  filter: blur(10px);
+}
+
+.button1:hover {
+  box-shadow: 0 0 20px #ff69b4, 0 0 20px #00ff00;
+}
+
+.button1:hover:before, .button1:hover:after {
+  opacity: 1;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+<body>
+    <section>
+          <a href="/EP_PROJECT" class="button1 float">Home</a>
+    
+        <div class="form-box">
+
+            <div class="form-value">
+
+                <form action="RecruiterService" method="post">
+
+                    <h2>Recruiter Login</h2>
+
+                    <div class="inputbox">
+
+                        <ion-icon name="person-circle-outline"></ion-icon>
+
+                        <input type="text"  name="recname"required>
+
+                        <label>name</label>
+
+                    </div>
+                    <div class="inputbox">
+
+                        <ion-icon name="mail-outline"></ion-icon>
+
+                        <input type="email"  name="recemail"required>
+
+                        <label>email</label>
+
+                    </div>
+
+                    <div class="inputbox">
+                                      <ion-icon name="lock-closed-outline"></ion-icon>
+                    
+
+                        <input type="password" name="recpass" required>
+
+                        <label>Password</label>
+
+                    </div>
+
+
+  				<button><input type="submit"value="LOG IN" style="background-color:transparent;font-weight:50px;border: none;padding: 0; margin: 0;"></button>
+
+
+                    <div class="register">
+
+                        <p>Don't have an account? <a href="recruitersignup.html">Sign Up</a></p>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ion-icon installation: Start -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!--ion-icon installation: End-->
+
+</body>
+<!-- partial -->
+  
+</body>
+<script>
+   function navigateToPage(url) {
+     window.location.href = url;
+   }
+ </script>
+</html>
