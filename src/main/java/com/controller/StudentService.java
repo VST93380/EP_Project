@@ -67,8 +67,8 @@ public class StudentService extends HttpServlet {
 		{
 //		    RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
 //		    dispatcher.forward(request, response);
-			response.sendRedirect("homepage.html");
-//			PrintWriter pw=response.getWriter();
+			 response.sendRedirect("homepage.html");
+	        //			PrintWriter pw=response.getWriter();
 //			pw.print("valid login");
 			}
 		else {

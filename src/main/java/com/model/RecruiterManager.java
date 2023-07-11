@@ -23,8 +23,8 @@ public class RecruiterManager {
 			    while(rs.next()) {
 			      Recruiter st=new Recruiter();
 			      st.setName(rs.getString(1));
-			      st.setEmail(rs.getString(1));
-			      st.setPassword(rs.getString(2));
+			      st.setEmail(rs.getString(2));
+			      st.setPassword(rs.getString(3));
 			      al.add(st); 
 			    }
 			    return al; 

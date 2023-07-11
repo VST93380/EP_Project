@@ -49,15 +49,15 @@ public class StudentServletSignup extends HttpServlet {
 		st.setPassword(password);
 		
 StudentManager em=new StudentManager();
-		PrintWriter out=response.getWriter();
+	
 		try {
-			out.println(em.insertData(st));
+			em.insertData(st);
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		
+		response.sendRedirect("homepage.html");
 		
 		
 	}

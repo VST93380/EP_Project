@@ -1,8 +1,6 @@
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
@@ -39,6 +37,24 @@
   	<servlet-name>StudentHome</servlet-name>
   	<servlet-class>com.controller.StudentHome</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>HomeRecruiter</servlet-name>
+  	<servlet-class>com.controller.HomeRecruiter</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>JspServlet</servlet-name>
+    <jsp-file>/table.jsp</jsp-file>
+</servlet>
+  <servlet>
+  	<servlet-name>HomeRecruiter1</servlet-name>
+  	
+  	<servlet-class>com.controller.HomeRecruiter1</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>HomeRecruiter2</servlet-name>
+  
+  	<servlet-class>com.controller.HomeRecruiter1</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>StudentService</servlet-name>
   	<url-pattern>/studentlogin/StudentService</url-pattern>
@@ -67,6 +83,23 @@
   	<servlet-name>StudentHome</servlet-name>
   	<url-pattern>/studentlogin/StudentHome</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HomeRecruiter</servlet-name>
+  	<url-pattern>/recruiterlogin/HomeRecruiter</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HomeRecruiter1</servlet-name>
+  	<url-pattern>/recruiterlogin/HomeRecruiter1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HomeRecruiter2</servlet-name>
+  	<url-pattern>/studentlogin/HomeRecruiter1</url-pattern>
+  </servlet-mapping>
+  
+<servlet-mapping>
+    <servlet-name>JspServlet</servlet-name>
+    <url-pattern>*.jsp</url-pattern>
+</servlet-mapping>
 </web-app>
 
 
