@@ -66,7 +66,7 @@ public class HomeRecruiter extends HttpServlet {
 			Blob imageBlob = con.createBlob();
 			InputStream inputStream = image.getInputStream();
 			try (OutputStream outputStream = imageBlob.setBinaryStream(1)) {
-				byte[] buffer = new byte[4096];
+				byte[] buffer = new byte[1000000];
 				int bytesRead;
 				while ((bytesRead = inputStream.read(buffer)) != -1) {
 					outputStream.write(buffer, 0, bytesRead);
@@ -93,7 +93,7 @@ public class HomeRecruiter extends HttpServlet {
 			}
 		}
 
-		response.sendRedirect("HomeRecruiter1");
+		response.sendRedirect("join1.html");
 
 	}
 }

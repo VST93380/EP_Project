@@ -142,15 +142,18 @@
 
   <div class="form-container">
     <h2>B.Tech Student Details</h2>
-    <form action="join.html" >
+<form action="StoreEmployeeServlet" method="post" enctype="multipart/form-data">
+      <label for="id">Enter ID:</label>
+      <input type="text" id="id" name="id" placeholder="Enter your ID number" required>
+
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-      
-    <label for="quantity">Number of backlogs:</label>
-  <input type="number" id="quantity" name="quantity" placeholder="Enter no.of backlogs" min="0" max="50" required>
+
+      <label for="backlogs">Number of backlogs:</label>
+      <input type="number" id="backlogs" name="backlogs" placeholder="Enter no. of backlogs" min="0" max="50" required>
 
       <label for="resume">Resume (PDF only):</label>
       <input type="file" id="resume" name="resume" accept=".pdf" required>
@@ -159,7 +162,7 @@
       <textarea id="about" name="about" placeholder="Write a brief description about yourself" required></textarea>
 
       <input type="submit" value="Submit">
-    </form>
+    </form>   
   </div>
     <a href="/EP_PROJECT" class="button1 float">Home</a>
    <a href="HomeRecruiter1" style="position: relative;top:-230px;left:450px;" class="button1 float">Companies</a>

@@ -1,11 +1,10 @@
-
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.Base64" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.model.Company" %>
+<%@ page import="com.model.Employee" %>
 <html>
 <head>
-    <title>Company Table</title>
+    <title>StudentDetails Table</title>
    <style>
   body {
       background-color: #000000;
@@ -34,11 +33,11 @@
       overflow: hidden;
       position: relative;
       background-color: transparent; /* Set the table background color to transparent */
-        box-shadow: 0px 0px 10px #00ff00,
-             0px 0px 20px #00ff00,
-              0px 0px 30px #00ff00,
-              0px 0px 40px #00ff00,
-              0px 0px 50px #00ff00;
+        box-shadow: 0px 0px 10px #0ef3ef,
+             0px 0px 20px  #0ef3ef,
+              0px 0px 30px  #0ef3ef,
+              0px 0px 40px  #0ef3ef,
+              0px 0px 50px  #0ef3ef;
 }
 
   table:before {
@@ -101,7 +100,7 @@ th {
   }
   .button1 {
 display: inline-block;
-padding: 10px 20px;
+padding: 10px 20px; 
 border-radius: 20px;
 background-color: #ff69b4;
 color: #ffffff;
@@ -162,61 +161,72 @@ opacity: 1;
 </style>
 
    <marquee  direction="right" height="100px" scrollamount="15">
-  <h1 style="color: rgb(162, 17, 162);position:relative;top:12px;">🎀 🎀 🎀 🎀 🎀 𝔸𝕧𝕒𝕚𝕝𝕒𝕓𝕝𝕖 𝕔𝕠𝕞𝕡𝕒𝕟𝕚𝕖𝕤 𝕗𝕠𝕣 𝕣𝕖𝕔𝕣𝕦𝕚𝕥𝕞𝕖𝕟𝕥🎀 🎀 🎀 🎀 🎀 
+  <h1 style="color: rgb(162, 17, 162);position:relative;top:12px;">🎀 🎀 🎀 🎀 🎀 Student Details 🎀 🎀 🎀 🎀 🎀 
   </h1></marquee> 
 </head>
 <body>
       <a href="/EP_PROJECT" class="button1 float">Home</a>
 
     <div class="table-container">
-       <table>
+        <table>
             <tr>
-                <th><h3>Company Name</h3></th>
-                <th><h3>Company Logo</h3></th>
-                <th><h3>Contact Number</h3></th>
-                <th><h3>Contact Details</h3></th>
-                <th><h3>Company email</h3></th>
-                <th><h3>Relevant branch</h3></th>
+                <th><h3>Student ID</h3></th>
+                <th><h3>Student Name</h3></th>
+                <th><h3>Student email</h3></th>
+				<th><h3>Student backlogs</h3></th>
+                 <th><h3>About Student</h3></th>
+                 <th><h3>Student Resume</h3></th>
+                 
             </tr>
-            <% 
-            List<Company> recruiters = (List<Company>) request.getAttribute("recruiters");
-            if (recruiters != null) {
-                for (Company company : recruiters) {
-                    %>
-                    <tr>
-                        <td><%= (company.getName() != null) ? company.getName() : "" %></td>
-                        <td>
-                            <% 
-                            byte[] imageBytes = company.getImage();
-                            if (imageBytes != null && imageBytes.length > 0) {
-                                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-                                %>
-                                <img src="data:image/jpeg;base64,<%= base64Image %>" alt="Company Photo">
-                            <% } %>
-                        </td>
-                        <td><%= (company.getContact() != null) ? company.getContact() : "" %></td>
-                        <td><%= (company.getDetails() != null) ? company.getDetails() : "" %></td>
-                        <td><%= (company.getEmail() != null) ? company.getEmail() : "" %></td>
-                        <td><%= (company.getBranch() != null) ? company.getBranch() : "" %></td>
-                    </tr>
-                    <% 
-                }
-               
-            }
-            
-            %>
+<% if (request.getAttribute("list") != null) { %>
+<% for (Employee emp : (List<Employee>) request.getAttribute("list")) { %>
+<!-- Your existing loop code here -->
+            <td><%= emp.getId() %></td>
+                    <td><%= emp.getFullname()%></td>
+                    <td><%= emp.getEmail() %></td>
+                    <td><%=  emp.getBacklogs()%></td>
+                    <td><%=emp.getAboutYourself() %></td>
+                    
+          <td>
+                        <a href="#" onclick="openPdfAndRefresh('<%= Base64.getEncoder().encodeToString(emp.getResume()) %>')">
+    View resume
+</a>
+                        
+                    </td>
+                    
+                </tr>
+           <% } %>
+<% } %>                <tr>
+        
         </table>
     </div>
 </body>
+<script>
+    function openPdfAndRefresh(pdfData) {
+        // Convert the Base64 PDF data to Uint8Array
+        const binaryPdf = atob(pdfData);
+        const len = binaryPdf.length;
+        const buffer = new Uint8Array(len);
+        for (let i = 0; i < len; i++) {
+            buffer[i] = binaryPdf.charCodeAt(i);
+        }
+
+        // Create a Blob from the Uint8Array
+        const blob = new Blob([buffer], { type: 'application/pdf' });
+
+        // Create a URL for the Blob
+        const pdfUrl = URL.createObjectURL(blob);
+
+        // Open the PDF in a new tab
+        const newTab = window.open(pdfUrl, '_blank');
+
+        // Refresh the new tab after it has been opened
+        if (newTab) {
+            newTab.addEventListener('load', () => {
+                newTab.location.reload();
+            });
+        }
+    }
+</script>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
