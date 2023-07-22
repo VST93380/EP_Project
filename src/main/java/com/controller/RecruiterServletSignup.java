@@ -57,6 +57,9 @@ RecruiterManager em=new RecruiterManager();
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		response.sendRedirect("homepage.html");
+
 	}
+	
 
 }

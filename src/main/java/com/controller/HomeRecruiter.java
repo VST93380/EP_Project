@@ -52,13 +52,11 @@ public class HomeRecruiter extends HttpServlet {
 		String details = request.getParameter("company-details");
 		String email = request.getParameter("email");
 		String branch = request.getParameter("branch");
-
 		String url = "jdbc:mysql://localhost:3306/project";
 		String username = "root";
 		String password = "143Amma143*";
 		Connection con = null;
 		PreparedStatement ps = null;
-
 		try {
 			con = DriverManager.getConnection(url, username, password);
 			ps = con.prepareStatement("INSERT INTO company VALUES(?,?,?,?,?,?);");
@@ -92,8 +90,6 @@ public class HomeRecruiter extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-
 		response.sendRedirect("join1.html");
-
 	}
 }

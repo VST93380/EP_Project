@@ -36,6 +36,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>src/main/webapp/background.jpg</name>
+			<type>1</type>
+			<location>C:/Users/LENOVO/Desktop/background.jpg</location>
+		</link>
+		<link>
 			<name>src/main/webapp/video.mp4</name>
 			<type>1</type>
 			<location>C:/Users/LENOVO/Desktop/hi/video.mp4</location>

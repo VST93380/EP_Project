@@ -194,6 +194,12 @@ opacity: 1;
                         
                     </td>
                     
+                    <td>
+                        <button onclick="sendHireEmail('<%= emp.getEmail() %>')">Hire</button>
+                    </td>
+                    
+                    
+                    
                 </tr>
            <% } %>
 <% } %>                <tr>
@@ -226,6 +232,23 @@ opacity: 1;
                 newTab.location.reload();
             });
         }
+    }
+
+    function sendHireEmail(email) {
+        // AJAX request to send email
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/send_hire_email.jsp', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    alert('Email sent to ' + email);
+                } else {
+                    alert('Failed to send email. Please try again.');
+                }
+            }
+        };
+        xhr.send('email=' + email);
     }
 </script>
 
